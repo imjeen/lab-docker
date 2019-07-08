@@ -1,0 +1,37 @@
+version: '3.6'
+
+services:
+
+  # mongo:
+  #   build:
+  #     context: .
+  #     dockerfile: docker/mongo/Dockerfile
+  #   image: eg_lab/mongo:v1
+  #   container_name: eg-mongo
+  #   volumes:
+  #     - vol-db:/data/db
+
+  # nginx:
+  #   build:
+  #     context: .
+  #     dockerfile: docker/nginx/Dockerfile
+  #   image: eg_lab/nginx:v1
+  #   container_name: eg_nginx
+  #   volumes:
+  #     - ./www:/www
+  #   ports:
+  #      - "9090:80"
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    image: eg_lab/app:v1
+    container_name: eg-app
+    # command: sh -c "npm i && npm run build"
+    volumes:
+      - .:/webapp
+      - /webapp/node_modules
+
+# volumes:
+#   vol-db:

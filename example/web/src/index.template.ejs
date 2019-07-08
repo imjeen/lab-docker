@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- result style -->
+    <% for(var i=0; i < htmlWebpackPlugin.files.css.length; ++i){ %>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[i] %>">
+    <% } %>
+
+
+</head>
+<body>
+<h1>Test web page实施</h1>
+<h2>Docker</h2>
+
+
+<!-- result script -->
+<% for(var i=0; i < htmlWebpackPlugin.files.js.length; ++i){ %>
+<script src="<%= htmlWebpackPlugin.files.js[i] %>"></script>
+<% } %>
+
+</body>
+</html>

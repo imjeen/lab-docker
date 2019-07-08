@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+    puppeteer-chrome:
+        user: pptruser
+        working_dir: /home/pptruser
+        build: .
+        image: puppeteer-chrome-linux
+        container_name: puppeteer-chrome
+        volumes:
+            - .:/home/pptruser
+        cap_add:
+            - SYS_ADMIN
+        command: 
+            - /bin/sh
+            - -c
+            - |
+                ls /home/pptruser -la
+                node -e "`cat ./examples/youtube.js`"
+            

@@ -1,0 +1,23 @@
+concurrent = 1
+check_interval = 0
+
+[[runners]]
+  name = "TEST_CI"
+  url = "http://192.168.0.101:10080/"
+  token = "a2084b7d4a4124757d40f2ef99d5e8"
+  executor = "shell"
+  [runners.cache]
+
+[[runners]]
+  name = "TEST_002"
+  url = "http://localhost:10080/"
+  token = "4c04a716075ccb5398da4cf7e2841d"
+  executor = "docker"
+  [runners.docker]
+    tls_verify = false
+    image = "node:10.8.0-jessie"
+    privileged = false
+    disable_cache = false
+    volumes = ["/cache"]
+    extra_hosts = ["localhost:192.168.0.101"]
+  [runners.cache]

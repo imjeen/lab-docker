@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  youtube-dl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lab_youtube_dl:v1
+    container_name: youtube-dl
+    volumes:
+      - ../../downloads:/downloads
+

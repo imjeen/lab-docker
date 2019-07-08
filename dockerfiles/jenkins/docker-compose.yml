@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+    jenkins:
+        build:
+          context: .
+          dockerfile: Dockerfile
+        image: jenkins_image:v1
+        container_name: jenkins
+        ports:
+            - "8080:8080"
+            - "50000:50000"
+        environment:
+            JAVA_OPTS: "-Djava.awt.headless=true -Duser.timezone=Asia/Shanghai"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            # 将宿主机的 Docker 程序挂载到 Jenkins 容器内部
+            # - /usr/bin/docker:/usr/bin/docker:ro
+            - ./data/jenkins:/var/jenkins_home
