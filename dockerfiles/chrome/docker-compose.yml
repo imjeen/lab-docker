@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+    chrome:
+        # user:
+        working_dir: /app/
+        build: .
+        image: puppeteer_chrome_v5
+        container_name: puppeteer_chrome_v5
+        volumes:
+            - .:/app/
+

@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-    puppeteer-chrome:
+    puppeteer:
         user: pptruser
         working_dir: /home/pptruser
         build: .
