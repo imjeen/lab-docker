@@ -5,8 +5,9 @@ services:
         # user:
         working_dir: /app/
         build: .
-        image: puppeteer_chrome_v5
-        container_name: puppeteer_chrome_v5
+        image: puppeteer_handful_v1
+        container_name: puppeteer_handful_v1
         volumes:
             - .:/app/
+       
 

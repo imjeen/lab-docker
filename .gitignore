@@ -10,7 +10,8 @@ npm-debug.log
 
 data/
 cache/
-tmp
+tmp/
+temp/
 /www
 
 
