@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+
+  # app:
+  #   image: node:14.4.0
+  #   working_dir: /app/
+  #   volumes:
+  #     - .:/app/
+  #   networks:
+  #     - net_mongo
+  #     - net_redis
+
+  mongo:
+    image: mongo:4.0
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./cache/mongo:/data/db
+    networks:
+      - net_mongo
+
+      
+  redis:
+    image: redis:4.0-alpine
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - ./cache/redis:/data
+    networks:
+      - net_redis
+
+networks:
+  net_mongo:
+    driver: 'bridge'
+  net_redis:
+    driver: 'bridge'

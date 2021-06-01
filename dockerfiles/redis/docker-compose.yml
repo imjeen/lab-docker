@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  redis:
+    image: redis:4.0-alpine
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - ./temp/data:/data
+
+  redisCommander:
+    image: rediscommander/redis-commander
+    command: --redis-host redis
+    links:
+      - redis:redis
+    ports:
+      - '8081:8081'
+
+# volumes:
+#   redis-data:
+#     driver: local

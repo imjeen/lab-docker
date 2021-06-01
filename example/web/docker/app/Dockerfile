@@ -9,7 +9,8 @@ RUN \
     apk upgrade && \
 #    apk add g++ gcc python && \
     ls -ls && \
-    npm install -d
+    node  -v
+    # npm install -d
 
 COPY . .
 

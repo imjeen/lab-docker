@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  mongo:
+    image: mongo:4.0
+    command: mongod --auth
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./temp/db:/data/db
+      - ./temp/logs:/data/logs
+    env_file:
+      - .env
+    # network:
