@@ -3,7 +3,7 @@
 .idea
 
 # 忽略点开头的目录或文件
-/dockerfiles/**/\.*
+# /dockerfiles/**/\.*
 
 node_modules
 npm-debug.log

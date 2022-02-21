@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  # nextjs 服务名称，已被 nginx 使用，更改时需同时修改。
+  nextjs:
+    build: ./
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
