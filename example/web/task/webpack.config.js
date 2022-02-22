@@ -4,9 +4,11 @@ import HTMLPlugin from 'html-webpack-plugin';
 
 export default {
 
+    mode: 'development',
+
     context: __dirname,
 
-    devtool: "#source-map",
+    devtool: "source-map",
 
     entry:{
         app: path.resolve(__dirname, '../src/main.js'),
