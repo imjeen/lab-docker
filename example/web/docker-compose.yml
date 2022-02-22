@@ -29,8 +29,9 @@ services:
     container_name: eg-app
     # command: sh -c "npm i && npm run build"
     volumes:
-      - .:/webapp
+      - .:/webapp 
       - /webapp/node_modules
 
+# 数据卷容器
 volumes:
   vol-db:
