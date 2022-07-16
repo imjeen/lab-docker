@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  pg:
+    image: postgres:latest
+    restart: always
+    # environment:
+    #   - POSTGRES_USER=postgres
+    #   - POSTGRES_PASSWORD=postgres
+    env_file:
+      - database.env # configure postgres
+    ports:
+      - 5432:5432
+    volumes: 
+      - db:/var/lib/postgresql/data
+      # 导入数据
+      - ./init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+volumes:
+  db:
+    driver: local
